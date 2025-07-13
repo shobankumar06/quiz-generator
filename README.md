@@ -1,12 +1,40 @@
-# React + Vite
+# 🚀 Quiz Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, subject-based quiz generator built with **React**. Choose from different subjects, answer multiple-choice questions, and see your results — all in a smooth, visually engaging interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💡 Features
 
-## Expanding the ESLint configuration
+- ✅ Welcome screen to introduce the quiz.
+- ✅ Subject selection with beautiful card-style UI and icons (HTML, CSS, JavaScript, React).
+- ✅ Dynamic questions for each subject.
+- ✅ Interactive option buttons with instant feedback and smooth transitions.
+- ✅ Navigation buttons to move between questions.
+- ✅ Final result screen showing your score and percentage.
+- ✅ Ability to restart and choose a new subject anytime.
+- ✅ Fully responsive design — works great on mobile and desktop.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🖥️ Demo
+
+👉 **Live Demo**: [Check it out here!](your-deployed-link)
+
+---
+
+## ⚙️ Tech Stack
+
+- **React** (Vite)
+- CSS (custom, no frameworks)
+- JavaScript ES6+
+
+---
+
+## 🚩 Getting Started
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/yourusername/quiz-generator.git
+cd quiz-generator
