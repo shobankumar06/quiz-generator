@@ -1,4 +1,4 @@
-import "./Start.css";
+import "./start.css";
 
 export default function Start({ onStart }) {
   return (
