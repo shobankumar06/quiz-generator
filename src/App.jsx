@@ -1,6 +1,6 @@
 import { useState } from "react";
-import  question  from "./question.js"; // fix import if needed
-import SubjectSelector from "./subjectSelector";
+import  question  from "./question.js";
+import SubjectSelector from "./SubjectSelector";
 import Question from "./Question.jsx";
 import Result from "./Result";
 import Start from "./Start";
