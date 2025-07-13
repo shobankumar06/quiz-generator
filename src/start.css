@@ -1,49 +1,50 @@
-/* Start.css */
 .start-container {
-  height: 100%; /* Full height of viewport */
+  height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #f0f4f7 0%, #e0ecff 100%);
   padding: 2rem;
   box-sizing: border-box;
-  overflow: hidden;
 }
-
 
 .start-box {
   background-color: white;
-  padding: 3rem;
-  border-radius: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
   max-width: 500px;
   width: 100%;
 }
 
 .start-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  font-weight: 700;
   color: #333;
+  margin-bottom: 1rem;
 }
 
 .start-subtitle {
   font-size: 1.2rem;
+  color: #666;
   margin-bottom: 2rem;
-  color: #555;
 }
 
 .start-button {
-  background-color: #007bff;
-  color: white;
-  padding: 0.8rem 2rem;
+  background-color: #e5eaef;
+  color: rgb(30, 110, 160);
+  padding: 0.9rem 2rem;
   font-size: 1.1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .start-button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
+  color:#e5eaef;
 }

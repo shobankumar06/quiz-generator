@@ -1,34 +1,35 @@
-/* CSS Reset and base styles */
+/* index.css */
+
+/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fa;
+  background-color: #f2f4f8;
   color: #333;
   line-height: 1.6;
 }
 
-/* Make the app fill the viewport */
 #root {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   min-height: 100vh;
+  width: 100%;
   padding: 2rem;
 }
 
-/* Responsive container */
 .container {
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
   background: white;
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }

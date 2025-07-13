@@ -1,0 +1,64 @@
+.subject-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f7 0%, #e0ecff 100%);
+}
+
+.subject-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.subject-card h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subject-card p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.subject-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.subject-option {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subject-option img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+.subject-option span {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.subject-option:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}

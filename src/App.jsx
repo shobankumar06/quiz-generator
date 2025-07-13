@@ -1,29 +1,39 @@
 import { useState } from "react";
-import { questions } from "./question.js";
+import  question  from "./question.js"; // fix import if needed
+import SubjectSelector from "./subjectSelector";
 import Question from "./Question.jsx";
-import Result from "./Result.jsx";
-import Start from "./Start.jsx";
+import Result from "./Result";
+import Start from "./Start";
+import Navbar from "./Navbar";
 import "./App.css";
 
 function App() {
+  const [selectedSubject, setSelectedSubject] = useState(null);
+  const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
-  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const [answers, setAnswers] = useState([]);
   const [isStarted, setIsStarted] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+  const [hasWelcomed, setHasWelcomed] = useState(false);
 
-  const handleStart = () => setIsStarted(true);
+  const handleWelcomeStart = () => setHasWelcomed(true);
+
+  const handleSubjectSelect = (subject) => {
+    setSelectedSubject(subject);
+    setQuestions(question[subject]);
+    setAnswers(Array(question[subject].length).fill(null));
+    setIsStarted(true);
+  };
 
   const handleOptionSelect = (selected) => {
-    console.log("Selected option:", selected); 
-  setAnswers((prev) => {
-    const updated = [...prev];
-    updated[current] = selected;
-    return updated;
-  });
-};
+    setAnswers((prev) => {
+      const updated = [...prev];
+      updated[current] = selected;
+      return updated;
+    });
+  };
 
   const handleNext = () => {
-    console.log("Trying to go next. Current index:", current);
     if (current < questions.length - 1) {
       setCurrent(current + 1);
     }
@@ -38,22 +48,44 @@ function App() {
   const handleFinish = () => {
     setIsFinished(true);
   };
- const handleRestart = () => {
-  setCurrent(0);
-  setAnswers(Array(questions.length).fill(null));
-  setIsFinished(false);
-  setIsStarted(false);
-};
+
+  const handleRestart = () => {
+    setCurrent(0);
+    setAnswers(Array(questions.length).fill(null));
+    setIsFinished(false);
+    setIsStarted(true);
+  };
+
+  const handleGoHome = () => {
+    setCurrent(0);
+    setAnswers([]);
+    setIsFinished(false);
+    setIsStarted(false);
+    setSelectedSubject(null);
+    setHasWelcomed(false);
+  };
+
   const score = answers.reduce((acc, selected, idx) => {
-    return selected === questions[idx].answer ? acc + 1 : acc;
+    return selected === questions[idx]?.answer ? acc + 1 : acc;
   }, 0);
+
+  // 🔥 Add this flag
+  const showHomeButton = !isStarted || isFinished;
 
   return (
     <div className="App">
-      {!isStarted ? (
-        <Start onStart={handleStart} />
+      <Navbar onGoHome={handleGoHome} showHomeButton={showHomeButton} />
+      {!hasWelcomed ? (
+        <Start onStart={handleWelcomeStart} />
+      ) : !selectedSubject ? (
+        <SubjectSelector onSelect={handleSubjectSelect} />
       ) : isFinished ? (
-        <Result score={score} total={questions.length} onRestart={handleRestart} />
+        <Result
+          score={score}
+          total={questions.length}
+          onRestart={handleRestart}
+          subject={selectedSubject}
+        />
       ) : (
         <Question
           data={questions[current]}
